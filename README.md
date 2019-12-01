@@ -1,3 +1,3 @@
-# Unicorn Colouring Book #
+# Monthly mood tracker #
 
-Colouring book application for android featuring Unicorns.
+App to track your mood on a day-to-day basis.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Unicorn Colouring Book</string>
+    <string name="app_name">Monthly Mood Tracker</string>
 
     <string name="action_settings">More Functions</string>
     <string name="clickloadmore">Scroll To Bottom Load More</string>
