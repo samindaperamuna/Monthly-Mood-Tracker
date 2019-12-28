@@ -13,7 +13,6 @@
     <string name="savingimage">Save to Local</string>
     <string name="saveFailed">Save Failed</string>
     <string name="saveSuccess">Your Paint has been saved in：</string>
-    <string name="sharecontent">I am playing 【Finger Coloring】, Come and Play with me! Link：http://a.app.qq.com/o/simple.jsp?pkgname=com.swifty.fillcolor</string>
     <string name="pleaseselect">Please Select</string>
     <string name="sharemywork">Come see my new work.</string> 
     <string name="open">READ</string><![CDATA[    
@@ -213,4 +212,8 @@
     <string name="normal_color">Normal</string>
     <string name="gradualModel">Gradual Model</string>
     <string name="gradualModelHint">Advanced features - gradient colors.\n\nNote: You can not cover other colors after a gradient color. If you want to modify, please undo first!</string>
+    <string name="sharecontent">Come see my new work. I am playing [Monthly Mood Tracker] , Come and play with me ! Link https://play.google.com/store/apps/details?id=org.fifthgen.monthlymoodtracker</string>
+    <string name="mood_saved">Mood saved successfully!</string>
+    <string name="mood_save_error">Couldn\'t save mood.</string>
+    <string name="dailyImage">Daily Image</string>
 </resources>

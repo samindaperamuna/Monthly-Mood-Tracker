@@ -11,16 +11,26 @@ import org.fifthgen.colouringbooks.util.L;
  */
 @SuppressWarnings("unused")
 public class FCDBHelper extends SQLiteOpenHelper {
+
+    public static final String MOOD_TABLE = "mood_table";
+
     public static final String FCTABLE = "fc_table";
     public static final String FCIMAGETABLE = "fc_imagetable";
+    public static final String MOOD_TABLE_COL_0 = "date";
+
     public static final String FCTABLE_COL_0 = "ThemeID";
     public static final String FCTABLE_COL_1 = "ThemeName";
     public static final String FCTABLE_COL_2 = "Status";
+
     public static final String FCIMAGETABLE_COL_0 = "theme_id";
     public static final String FCIMAGETABLE_COL_1 = "pic_id";
     public static final String FCIMAGETABLE_COL_2 = "Status";
     public static final String FCIMAGETABLE_COL_3 = "WvHRadio";
+    public static final String MOOD_TABLE_COL_1 = "mood";
+    public static final String MOOD_TABLE_COL_2 = "notes";
     private static final String DBNAME = "fillcolor.db";
+
+
     private static final int version = 5;
 
     public FCDBHelper(Context context) {
@@ -37,10 +47,17 @@ public class FCDBHelper extends SQLiteOpenHelper {
                 FCTABLE_COL_0 + " INTEGER, " +
                 FCTABLE_COL_1 + " varchar(30), " +
                 FCTABLE_COL_2 + " INTEGER DEFAULT 0" + " );");
+
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + FCIMAGETABLE + "( " +
                 FCIMAGETABLE_COL_0 + " INTEGER, " +
                 FCIMAGETABLE_COL_1 + " INTEGER, " +
                 FCIMAGETABLE_COL_2 + " INTEGER DEFAULT 0" + " );");
+
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + MOOD_TABLE + "( " +
+                MOOD_TABLE_COL_0 + " DATE, " +
+                MOOD_TABLE_COL_1 + " VARCHAR(100), " +
+                MOOD_TABLE_COL_2 + " VARCHAR(250) " + " );");
+
         onUpgrade(sqLiteDatabase, 3, version);
     }
 

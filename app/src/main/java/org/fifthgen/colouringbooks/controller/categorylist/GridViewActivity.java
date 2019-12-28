@@ -14,7 +14,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import org.fifthgen.colouringbooks.MyApplication;
 import org.fifthgen.colouringbooks.R;
 import org.fifthgen.colouringbooks.controller.BaseActivity;
-import org.fifthgen.colouringbooks.controller.paint.PaintActivity;
+import org.fifthgen.colouringbooks.controller.switcher.SwitcherActivity;
 import org.fifthgen.colouringbooks.model.GridViewActivityModel;
 import org.fifthgen.colouringbooks.model.bean.PictureBean;
 import org.fifthgen.colouringbooks.util.L;
@@ -142,8 +142,23 @@ public class GridViewActivity extends BaseActivity {
         });
     }
 
-    private void gotoPaintActivity(String s) {
-        Intent intent = new Intent(this, PaintActivity.class);
+    // todo: move to its own activity.
+
+//    private void gotoPaintActivity(String s) {
+//        Intent intent = new Intent(this, PaintActivity.class);
+//
+//        if (s.contains(MyApplication.MainUrl)) {
+//            intent.putExtra(MyApplication.BIGPIC, s);
+//        } else {
+//            Log.d("url open:", folderimage + "/" + s);
+//            intent.putExtra(MyApplication.BIGPIC, "assets://" + folderimage + "/" + s);
+//        }
+//
+//        startActivity(intent);
+//    }
+
+    private void showSwitcher(String s) {
+        Intent intent = new Intent(this, SwitcherActivity.class);
 
         if (s.contains(MyApplication.MainUrl)) {
             intent.putExtra(MyApplication.BIGPIC, s);
@@ -161,9 +176,9 @@ public class GridViewActivity extends BaseActivity {
 
         gridViewAdapter.setOnRecycleViewItemClickListener((view, i) -> {
             if (isLocal) {
-                gotoPaintActivity(pictureBeans.get(i).getUri());
+                showSwitcher(pictureBeans.get(i).getUri());
             } else {
-                gotoPaintActivity(String.format(Locale.getDefault(),
+                showSwitcher(String.format(Locale.getDefault(),
                         MyApplication.ImageLargeUrl, categoryId, pictureBeans.get(i).getId()));
             }
         });

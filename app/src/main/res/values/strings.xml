@@ -328,4 +328,10 @@
     <string name="langCN" translatable="false">简体</string>
     <string name="langEN" translatable="false">English</string>
     <string name="langFR" translatable="false">Français</string>
+    <string name="day">Day</string>
+    <string name="mood">Mood</string>
+    <string name="notes">Notes</string>
+    <string name="mood_saved">Mood saved successfully!</string>
+    <string name="mood_save_error">Couldn\'t save mood.</string>
+    <string name="dailyImage">Daily Image</string>
 </resources>

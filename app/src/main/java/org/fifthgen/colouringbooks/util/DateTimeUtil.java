@@ -6,6 +6,7 @@ import java.util.Calendar;
  * Created by GameGFX Studio on 2015/9/4.
  */
 public class DateTimeUtil {
+
     public static String formatTimeStamp(long l) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(l);

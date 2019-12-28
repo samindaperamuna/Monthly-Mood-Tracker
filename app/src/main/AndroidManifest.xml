@@ -21,7 +21,8 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.mood.MoodActivity"></activity>
+        <activity android:name=".controller.switcher.SwitcherActivity"></activity>
+        <activity android:name=".controller.mood.MoodActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -6,7 +6,7 @@
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
     <color name="gray">#ffaaaaaa</color>
-    <color name="lightgray">#ffefefef</color>
+    <color name="lightgray">#EFEFEF</color>
     <color name="transparenttotal">#00000000</color>
 
     <color name="yellow">#ffFFFF00</color>
