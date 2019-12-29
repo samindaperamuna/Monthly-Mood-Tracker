@@ -94,4 +94,10 @@
     <string name="jianbian_color">渐变色</string>
     <string name="normal_color">正常色</string>
     <string name="gradualModel">渐变功能</string>
+    <string name="color">Colour</string>
+    <string name="dailyImage">Daily Image</string>
+    <string name="day">Day</string>
+    <string name="mood">Mood</string>
+    <string name="mood_switch_desc">Click on the image corresponding to the date you want to edit.</string>
+    <string name="add_edit_mode">Add / Edit Mood</string>
 </resources>

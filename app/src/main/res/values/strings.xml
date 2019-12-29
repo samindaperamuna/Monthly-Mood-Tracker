@@ -334,4 +334,7 @@
     <string name="mood_saved">Mood saved successfully!</string>
     <string name="mood_save_error">Couldn\'t save mood.</string>
     <string name="dailyImage">Daily Image</string>
+    <string name="color">Colour</string>
+    <string name="mood_switch_desc">Click on the image corresponding to the date you want to edit.</string>
+    <string name="add_edit_mode">Add / Edit Mood</string>
 </resources>

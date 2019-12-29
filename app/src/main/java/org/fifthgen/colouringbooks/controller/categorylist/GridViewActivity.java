@@ -142,21 +142,6 @@ public class GridViewActivity extends BaseActivity {
         });
     }
 
-    // todo: move to its own activity.
-
-//    private void gotoPaintActivity(String s) {
-//        Intent intent = new Intent(this, PaintActivity.class);
-//
-//        if (s.contains(MyApplication.MainUrl)) {
-//            intent.putExtra(MyApplication.BIGPIC, s);
-//        } else {
-//            Log.d("url open:", folderimage + "/" + s);
-//            intent.putExtra(MyApplication.BIGPIC, "assets://" + folderimage + "/" + s);
-//        }
-//
-//        startActivity(intent);
-//    }
-
     private void showSwitcher(String s) {
         Intent intent = new Intent(this, SwitcherActivity.class);
 

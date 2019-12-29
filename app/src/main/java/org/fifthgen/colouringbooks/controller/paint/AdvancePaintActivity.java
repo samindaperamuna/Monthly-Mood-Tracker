@@ -19,8 +19,8 @@ import org.fifthgen.colouringbooks.listener.OnAddWordsSuccessListener;
 import org.fifthgen.colouringbooks.listener.OnChangeBorderListener;
 import org.fifthgen.colouringbooks.model.SaveImageAsyn;
 import org.fifthgen.colouringbooks.util.ShareImageUtil;
+import org.fifthgen.colouringbooks.view.ImageButtonDefine;
 import org.fifthgen.colouringbooks.view.MyProgressDialog;
-import org.fifthgen.colouringbooks.view.imageButtonDefine;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,25 +32,25 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 public class AdvancePaintActivity extends BaseActivity {
 
     @BindView(R.id.addwords)
-    imageButtonDefine addwords;
+    ImageButtonDefine addwords;
     @BindView(R.id.addvoice)
     Button addvoice;
     @BindView(R.id.current_image)
     ImageView currentImage;
     @BindView(R.id.share)
-    imageButtonDefine share;
+    ImageButtonDefine share;
     @BindView(R.id.repaint)
-    imageButtonDefine repaint;
+    ImageButtonDefine repaint;
     @BindView(R.id.paintview)
     FrameLayout paintview;
     String imageUri;
     MyDialogFactory myDialogFactory;
     @BindView(R.id.addborder)
-    imageButtonDefine addborder;
+    ImageButtonDefine addborder;
     @BindView(R.id.border)
     ImageView border;
     @BindView(R.id.cloudgallery)
-    imageButtonDefine cloudgallery;
+    ImageButtonDefine cloudgallery;
     @BindView(R.id.cancel)
     Button cancel;
 

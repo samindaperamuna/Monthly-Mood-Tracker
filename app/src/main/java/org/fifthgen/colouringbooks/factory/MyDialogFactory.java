@@ -308,7 +308,8 @@ public class MyDialogFactory extends MyDialogStyle {
 
     private void showOnceTimesContentDialog(String title, CharSequence contentstr, final String whichDialog) {
         if (SharedPreferencesFactory.getBoolean(context, whichDialog, true)) {
-            @SuppressLint("InflateParams") View layout = LayoutInflater.from(context).inflate(R.layout.view_dialog_with_checkbox, null);
+            @SuppressLint("InflateParams")
+            View layout = LayoutInflater.from(context).inflate(R.layout.view_dialog_with_checkbox, null);
             TextView content = layout.findViewById(R.id.content);
             final CheckBox checkBox = layout.findViewById(R.id.checkbox_dontshow);
             content.setText(contentstr);
@@ -365,5 +366,12 @@ public class MyDialogFactory extends MyDialogStyle {
 
     public void showGradualHintDialog() {
         showOnceTimesContentDialog(context.getString(R.string.gradualModel), context.getString(R.string.gradualModelHint), SharedPreferencesFactory.GradualModel);
+    }
+
+    public void showMoodSwitchDialog() {
+        showOneButtonDialog(context.getResources().getString(R.string.add_edit_mode),
+                context.getResources().getString(R.string.mood_switch_desc),
+                context.getResources().getString(R.string.ok), view -> dismissDialog(),
+                true);
     }
 }

@@ -42,8 +42,8 @@ import org.fifthgen.colouringbooks.util.ImageSaveUtil;
 import org.fifthgen.colouringbooks.util.L;
 import org.fifthgen.colouringbooks.util.ShareImageUtil;
 import org.fifthgen.colouringbooks.view.ColorPicker;
+import org.fifthgen.colouringbooks.view.ImageButtonDefine;
 import org.fifthgen.colouringbooks.view.MyProgressDialog;
-import org.fifthgen.colouringbooks.view.imageButtonDefine;
 import org.fifthgen.colouringbooks.view.imageButtonDefineSecondLay;
 import org.fifthgen.colouringbooks.view.imageCheckBoxDefine;
 import org.jetbrains.annotations.NotNull;
@@ -65,7 +65,7 @@ public class PaintActivity extends BaseActivity implements View.OnClickListener 
     ImageView currentColor, cColor1, cColor2, cColor3, cColor4;
     ColorPicker colorPickerSeekBar, largecolorpicker;
     ImageView advanceColor;
-    imageButtonDefine save, share, more, delete;
+    ImageButtonDefine save, share, more, delete;
     imageButtonDefineSecondLay undo, redo;
     imageCheckBoxDefine pick, drawLine, jianbian_color;
     String URL;

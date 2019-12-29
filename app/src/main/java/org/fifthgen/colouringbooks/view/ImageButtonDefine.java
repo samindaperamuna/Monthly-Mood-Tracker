@@ -11,13 +11,13 @@ import org.fifthgen.colouringbooks.util.DensityUtil;
 
 
 @SuppressWarnings({"FieldCanBeLocal", "CanBeFinal"})
-public class imageButtonDefine extends LinearLayout {
+public class ImageButtonDefine extends LinearLayout {
 
     private ImageView imageViewbutton;
 
     private TextView textView;
 
-    public imageButtonDefine(Context context, AttributeSet attrs) {
+    public ImageButtonDefine(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         imageViewbutton = new ImageView(context, attrs);
