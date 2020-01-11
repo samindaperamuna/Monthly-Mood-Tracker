@@ -14,7 +14,7 @@
         android:background="@drawable/firstrow_icon_bg"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:src="@drawable/button_delete"
+        android:src="@drawable/button_color"
         android:text="@string/color"
         android:textColor="@drawable/textcolor_white_gray" />
 
@@ -26,7 +26,7 @@
         android:background="@drawable/firstrow_icon_bg"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:src="@drawable/button_share"
+        android:src="@drawable/button_mood"
         android:text="@string/mood"
         android:textColor="@drawable/textcolor_white_gray" />
 

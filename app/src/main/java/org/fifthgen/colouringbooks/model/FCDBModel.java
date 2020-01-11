@@ -46,7 +46,7 @@ public class FCDBModel {
     public List<ThemeBean.Theme> readThemeList(Context context) {
         fcdbHelper = new FCDBHelper(context);
         db = fcdbHelper.getReadableDatabase();
-        cursor = db.query(FCDBHelper.FCTABLE, null, null, null, null, null, null, null);
+        cursor = db.query(FCDBHelper.APP_TABLE, null, null, null, null, null, null, null);
 
         if (cursor.getCount() == 0) {
             closeDBandCursor();
@@ -75,7 +75,7 @@ public class FCDBModel {
             value.put(FCDBHelper.FCTABLE_COL_1, theme.getN());
             value.put(FCDBHelper.FCTABLE_COL_2, theme.getStatus());
 
-            db.insert(FCDBHelper.FCTABLE, null, value);
+            db.insert(FCDBHelper.APP_TABLE, null, value);
         }
 
         closeDBandCursor();
@@ -85,7 +85,7 @@ public class FCDBModel {
     public List<PictureBean.Picture> readPicList(Context context, int theme_id) {
         fcdbHelper = new FCDBHelper(context);
         db = fcdbHelper.getReadableDatabase();
-        cursor = db.query(FCDBHelper.FCIMAGETABLE, null, FCDBHelper.FCIMAGETABLE_COL_0 + "=" + theme_id, null, null, null, null, null);
+        cursor = db.query(FCDBHelper.APP_IMAGE_TABLE, null, FCDBHelper.FCIMAGETABLE_COL_0 + "=" + theme_id, null, null, null, null, null);
 
         if (cursor.getCount() == 0) {
             closeDBandCursor();
@@ -114,7 +114,7 @@ public class FCDBModel {
             value.put(FCDBHelper.FCIMAGETABLE_COL_1, picBean.getId());
             value.put(FCDBHelper.FCIMAGETABLE_COL_2, picBean.getStatus());
             value.put(FCDBHelper.FCIMAGETABLE_COL_3, picBean.getWvHradio());
-            db.insert(FCDBHelper.FCIMAGETABLE, null, value);
+            db.insert(FCDBHelper.APP_IMAGE_TABLE, null, value);
         }
 
         closeDBandCursor();
@@ -142,7 +142,7 @@ public class FCDBModel {
     public List<CacheImageBean> readHaveCacheImages(Context context) {
         fcdbHelper = new FCDBHelper(context);
         db = fcdbHelper.getWritableDatabase();
-        cursor = db.query(FCDBHelper.FCIMAGETABLE, null, null, null, null, null, null);
+        cursor = db.query(FCDBHelper.APP_IMAGE_TABLE, null, null, null, null, null, null);
 
         List<CacheImageBean> cacheImageBeans = new ArrayList<>();
 
@@ -189,7 +189,7 @@ public class FCDBModel {
         values.put(FCDBHelper.MOOD_TABLE_COL_1, mood.getMood());
         values.put(FCDBHelper.MOOD_TABLE_COL_2, mood.getNotes());
 
-        long newRowId = db.insert(FCDBHelper.FCTABLE, null, values);
+        long newRowId = db.insert(FCDBHelper.MOOD_TABLE, null, values);
 
         closeDBandCursor();
 
@@ -213,7 +213,7 @@ public class FCDBModel {
         String selection = FCDBHelper.MOOD_TABLE_COL_0 + " = ?";
         String[] selectionArgs = {DateTimeUtil.formatTimeStamp(mood.getDate().getTime())};
 
-        int count = db.update(FCDBHelper.FCTABLE, values, selection, selectionArgs);
+        int count = db.update(FCDBHelper.MOOD_TABLE, values, selection, selectionArgs);
 
         closeDBandCursor();
 

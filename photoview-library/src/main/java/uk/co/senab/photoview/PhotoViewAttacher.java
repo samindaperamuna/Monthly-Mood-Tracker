@@ -814,7 +814,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     }
 
     /**
-     * Helper method that maps the supplied Matrix to the current Drawable
+     * Helper method that masks the supplied Matrix to the current Drawable
      *
      * @param matrix - Matrix to map Drawable against
      * @return RectF - Displayed Rectangle

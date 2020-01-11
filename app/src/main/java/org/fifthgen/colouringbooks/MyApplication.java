@@ -21,7 +21,9 @@ import org.fifthgen.colouringbooks.model.bean.UserBean;
 import org.fifthgen.colouringbooks.util.ImageLoaderUtil;
 import org.fifthgen.colouringbooks.util.L;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * Created by GameGFX Studio on 2018/7/31.
@@ -29,6 +31,7 @@ import java.util.Locale;
 public class MyApplication extends Application {
 
     public static final String PATHIMG = "coloring/";
+    public static final String PATH_MASK = "masks/";
     public static final String BAIDUTRANSLATEAPI = "http://openapi.baidu.com/public/2.0/bmt/translate?client_id=iD8ulydDkWhNWFmQEGEGY4m9&";
 
     public static final String ADMOB_APP_ID = "ca-app-pub-5247973607982667~2117166723";
@@ -49,6 +52,8 @@ public class MyApplication extends Application {
     public static final int PaintActivityRequest = 900;
     public static final int RepaintResult = 999;
     public static final String BIGPICFROMUSERPAINTNAME = "bigpic_user_name";
+    public static final String MASK = "mask";
+    public static final String MOOD_DAY = "mood_day";
 
 
     public static int screenWidth;
@@ -56,6 +61,41 @@ public class MyApplication extends Application {
 
     public static UserBean.User user;
     public static String userToken;
+
+    public static final Map<Integer, String> COLOR_MAP = new HashMap<Integer, String>() {{
+        put(1, "#ffff00");
+        put(2, "#ff0000");
+        put(3, "#f69679");
+        put(4, "#fdc689");
+        put(5, "#bd8cbf");
+        put(6, "#ec008c");
+        put(7, "#f06eaa");
+        put(8, "#f49ac1");
+        put(9, "#f5989d");
+        put(10, "#e074e5");
+        put(11, "#e71af2");
+        put(12, "#00ffff");
+        put(13, "#6dcff6");
+        put(14, "#605ca8");
+        put(15, "#1a136b");
+        put(16, "#0072bc");
+        put(17, "#00bff3");
+        put(18, "#00a651");
+        put(19, "#c4df9b");
+        put(20, "#aba000");
+        put(21, "#a36209");
+        put(22, "#00ffc8");
+        put(23, "#4366e3");
+        put(24, "#c69c6d");
+        put(25, "#f7941d");
+        put(26, "#00ff5d");
+        put(27, "#7ab905");
+        put(28, "#cf2d7e");
+        put(29, "#e1e343");
+        put(30, "#caaaff");
+        put(31, "#875bcc");
+    }};
+
 
     public static void initLanguage(Context context) {
         int lancode = SharedPreferencesFactory.getInteger(context, SharedPreferencesFactory.LanguageCode, 0);

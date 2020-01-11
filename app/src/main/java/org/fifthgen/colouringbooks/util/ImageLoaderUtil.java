@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Environment;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,6 +16,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 import org.fifthgen.colouringbooks.R;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,6 +24,8 @@ import java.util.Random;
 
 @SuppressWarnings({"WeakerAccess", "CanBeFinal"})
 public class ImageLoaderUtil {
+
+    public static String ROOT = Environment.getExternalStorageDirectory().getPath() + "/MyFCWorks/";
 
     public static ImageLoader imageLoader = ImageLoader.getInstance();
 
@@ -141,5 +145,14 @@ public class ImageLoaderUtil {
                 }
             }
         }
+    }
+
+
+    public static boolean hasSavedFile(String s) {
+        int hashCode = s.hashCode();
+        String path = ROOT + hashCode + ".png";
+        File file = new File(path);
+
+        return file.exists();
     }
 }

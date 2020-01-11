@@ -163,7 +163,7 @@ public class GridViewActivityModel {
                 pictureBeans = gson.fromJson(ret, PictureBean.class).getPictures();
                 if (pictureBeans != null && !pictureBeans.isEmpty()) {
                     //delete current pictures
-                    FCDBModel.getInstance().deleteThisCategoryid(context, categoryid, FCDBHelper.FCIMAGETABLE);
+                    FCDBModel.getInstance().deleteThisCategoryid(context, categoryid, FCDBHelper.APP_IMAGE_TABLE);
                     //save to db
                     FCDBModel.getInstance().insertPics(context, categoryid, pictureBeans);
                     return "SUCCESS";

@@ -25,6 +25,8 @@ import org.fifthgen.colouringbooks.view.EmptyRecyclerView;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -42,12 +44,14 @@ public class GridViewActivity extends BaseActivity {
     private EmptyRecyclerView gridView;
     private TextView titleView;
     private SwipeRefreshLayout swipeView;
+    private String maskImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         categoryId = Objects.requireNonNull(getIntent().getExtras()).getInt(MyApplication.THEMEID);
         folderimage = MyApplication.PATHIMG + getIntent().getExtras().getString(MyApplication.FOLDERIMG);
+        maskImage = MyApplication.PATH_MASK + getIntent().getExtras().getString(MyApplication.FOLDERIMG);
         initViews();
     }
 
@@ -58,6 +62,17 @@ public class GridViewActivity extends BaseActivity {
 
             Log.d("url size", Integer.toString(pictureBeans.size()));
             L.e(pictureBeans.size() + "");
+
+            // Added a comparator to sort the images properly.
+            Collections.sort(pictureBeans, new Comparator<PictureBean.Picture>() {
+
+                @Override
+                public int compare(PictureBean.Picture picture1, PictureBean.Picture picture2) {
+                    int id1 = Integer.parseInt(picture1.getUri().split("\\.")[0]);
+                    int id2 = Integer.parseInt(picture2.getUri().split("\\.")[0]);
+                    return id1 - id2;
+                }
+            });
 
             if (pictureBeans == null) {
                 Toast.makeText(GridViewActivity.this, getString(R.string.loadfailed), Toast.LENGTH_SHORT).show();
@@ -151,6 +166,8 @@ public class GridViewActivity extends BaseActivity {
             Log.d("url open:", folderimage + "/" + s);
             intent.putExtra(MyApplication.BIGPIC, "assets://" + folderimage + "/" + s);
         }
+
+        intent.putExtra(MyApplication.MASK, "assets://" + maskImage + "/" + s);
 
         startActivity(intent);
     }

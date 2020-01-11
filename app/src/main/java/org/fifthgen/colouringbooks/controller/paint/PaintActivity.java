@@ -301,7 +301,7 @@ public class PaintActivity extends BaseActivity implements View.OnClickListener 
         advanceColor = findViewById(R.id.advance_color);
         undo = findViewById(R.id.undo);
         redo = findViewById(R.id.redo);
-        save = findViewById(R.id.save);
+        save = findViewById(R.id.saveButton);
         share = findViewById(R.id.share);
         more = findViewById(R.id.more);
         delete = findViewById(R.id.delete);
@@ -566,7 +566,7 @@ public class PaintActivity extends BaseActivity implements View.OnClickListener 
         try {
             File extDir = this.getApplicationContext().getExternalFilesDir(null);
             String root = String.format("%s/MyFCWorks/", Objects.requireNonNull(extDir).getPath());
-            // String root = Environment.getExternalStorageDirectory().getPath() + ;
+            // String ROOT = Environment.getExternalStorageDirectory().getPath() + ;
             String path = root + hashCode + ".png";
             File file = new File(path);
             if (!file.exists()) {

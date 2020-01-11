@@ -221,4 +221,6 @@
     <string name="mood">Mood</string>
     <string name="mood_switch_desc">Click on the image corresponding to the date you want to edit.</string>
     <string name="add_edit_mode">Add / Edit Mood</string>
+    <string name="update">Update</string>
+    <string name="notes">Notes</string>
 </resources>

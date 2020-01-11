@@ -14,8 +14,9 @@ public class FCDBHelper extends SQLiteOpenHelper {
 
     public static final String MOOD_TABLE = "mood_table";
 
-    public static final String FCTABLE = "fc_table";
-    public static final String FCIMAGETABLE = "fc_imagetable";
+    public static final String APP_TABLE = "mood_tracker_table";
+    public static final String APP_IMAGE_TABLE = "mood_tracker_imagetable";
+
     public static final String MOOD_TABLE_COL_0 = "date";
 
     public static final String FCTABLE_COL_0 = "ThemeID";
@@ -28,7 +29,7 @@ public class FCDBHelper extends SQLiteOpenHelper {
     public static final String FCIMAGETABLE_COL_3 = "WvHRadio";
     public static final String MOOD_TABLE_COL_1 = "mood";
     public static final String MOOD_TABLE_COL_2 = "notes";
-    private static final String DBNAME = "fillcolor.db";
+    private static final String DBNAME = "mood_tracker.db";
 
 
     private static final int version = 5;
@@ -43,12 +44,12 @@ public class FCDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + FCTABLE + "( " +
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + APP_TABLE + "( " +
                 FCTABLE_COL_0 + " INTEGER, " +
                 FCTABLE_COL_1 + " varchar(30), " +
                 FCTABLE_COL_2 + " INTEGER DEFAULT 0" + " );");
 
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + FCIMAGETABLE + "( " +
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + APP_IMAGE_TABLE + "( " +
                 FCIMAGETABLE_COL_0 + " INTEGER, " +
                 FCIMAGETABLE_COL_1 + " INTEGER, " +
                 FCIMAGETABLE_COL_2 + " INTEGER DEFAULT 0" + " );");
@@ -68,15 +69,15 @@ public class FCDBHelper extends SQLiteOpenHelper {
             case 1:
             case 2:
                 L.e("upgrade to" + i);
-                sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + FCTABLE);
-                sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + FCIMAGETABLE);
+                sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + APP_TABLE);
+                sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + APP_IMAGE_TABLE);
                 onCreate(sqLiteDatabase);
             case 3:
             case 4:
                 L.e("upgrade to" + i);
 
                 try {
-                    sqLiteDatabase.execSQL("ALTER TABLE " + FCIMAGETABLE + " ADD COLUMN " +
+                    sqLiteDatabase.execSQL("ALTER TABLE " + APP_IMAGE_TABLE + " ADD COLUMN " +
                             FCIMAGETABLE_COL_3 + " REAL;");
                 } catch (Exception e) {
                     L.e(e.toString());

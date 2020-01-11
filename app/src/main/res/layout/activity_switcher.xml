@@ -11,12 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ImageView
-        android:id="@+id/preview"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:contentDescription="@string/dailyImage"
-        app:srcCompat="@color/lightgray" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageMask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/dailyImage"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imagePreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/dailyImage"
+            android:visibility="visible"
+            app:srcCompat="@color/lightgray" />
+    </FrameLayout>
 
 </LinearLayout>

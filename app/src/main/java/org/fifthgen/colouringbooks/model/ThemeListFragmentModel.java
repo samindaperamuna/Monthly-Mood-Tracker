@@ -33,7 +33,7 @@ public class ThemeListFragmentModel {
     }
 
     public void refreshListContent(Context context, OnThemeListLoadListener onLoadFinishListener) {
-        FCDBModel.getInstance().deleteAllRows(context, FCDBHelper.FCTABLE);
+        FCDBModel.getInstance().deleteAllRows(context, FCDBHelper.APP_TABLE);
         LoadListDataAsyn loadListDataAsyn = new LoadListDataAsyn();
         loadListDataAsyn.execute(0, context);
         loadListDataAsyn.setOnThemeListLoadListener(onLoadFinishListener);
